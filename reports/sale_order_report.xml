@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_ttd" inherit_id="sale.report_saleorder_document" priority="18">
+        <div t-field="doc.partner_id" position="before">
+            <strong>Customer:</strong>
+        </div>
+
+        <xpath expr="//div" position="inside">
+            <t t-if="user.company_id.signature_on_sale_order">
+                <br/>
+                <![CDATA[&nbsp;]]>
+                <br/>
+                <![CDATA[&nbsp;]]>
+                <br/>
+                <![CDATA[&nbsp;]]>
+                <div class="row">
+                    <div class="col-xs-3 text-center">
+                        <p>Prepared by,</p>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <b>
+                            <t t-esc="user.company_id.prepared_by_id.name" />
+                        </b>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <p>Validated by,</p>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <b>
+                            <t t-esc="user.company_id.validated_by_id.name" />
+                        </b>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <p>Verified by,</p>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <b>
+                            <t t-esc="user.company_id.verified_by_id.name" />
+                        </b>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <p>Approved by,</p>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <br/>
+                        <![CDATA[&nbsp;]]>
+                        <b>
+                            <t t-esc="user.company_id.approved_by_id.name" />
+                        </b>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
+    

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="ttd_on_account_invoice_form" model="ir.ui.view">
+		<field name="name">ttd_on_account_invoice_form</field>
+		<field name="model">account.invoice</field>
+		<field name="inherit_id" ref="account.invoice_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='amount_untaxed']//parent::group" position="before">
+				<group class="oe_left">
+					<div class="row">
+						<div class="col-xs-12">
+							<label for="show_signature" />
+							<field name="show_signature" />
+						</div>
+						<div class="col-xs-3">
+							<label for="prepared_by_id" />
+							<field name="prepared_by_id" attrs="{'invisible': [('show_signature', '!=', True)]}" />
+						</div>
+						<div class="col-xs-3">
+							<label for="verified_by_id" />
+							<field name="verified_by_id" attrs="{'invisible': [('show_signature', '!=', True)]}" />
+						</div>
+						<div class="col-xs-3">
+							<label for="validated_by_id" />
+							<field name="validated_by_id" attrs="{'invisible': [('show_signature', '!=', True)]}" />
+						</div>
+						<div class="col-xs-3">
+							<label for="approved_by_id" />
+							<field name="approved_by_id" attrs="{'invisible': [('show_signature', '!=', True)]}" />
+						</div>
+					</div>
+				</group>
+			</xpath>
+		</field>
+	</record>
+</odoo>

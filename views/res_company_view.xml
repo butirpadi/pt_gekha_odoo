@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="ttd_view_company_form" model="ir.ui.view">
+            <field name="name">ttd.res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field eval="18" name="priority"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Signature Option" name="signature_option">
+                        <group string="Set signature on:">
+                            <field name="signature_on_cust_invoice" string="Customer Invoice" />
+                            <field name="signature_on_purchase_order" string="Purchase Order" />
+                            <field name="signature_on_sale_order" string="Sales Order" />
+                            <field name="signature_on_payment_receipt" string="Payment Receipt" />
+                        </group>
+                        <group>
+                            <field name="prepared_by_id"/>
+                            <field name="validated_by_id"/>
+                            <field name="verified_by_id"/>
+                            <field name="approved_by_id"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
